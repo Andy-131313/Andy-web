@@ -1,31 +1,31 @@
 const projects = [
   {
-    title: "Osobní portfolio",
+    title: 'Osobní portfolio',
     description:
-      "Responzivní web s přehledem mých dovedností a předchozích projektů vytvořených pro klienty i vlastní potřebu.",
-    url: "https://example.com/portfolio",
-    role: "Design, vývoj, nasazení",
+      'Responzivní web s přehledem mých dovedností a předchozích projektů vytvořených pro klienty i vlastní potřebu.',
+    url: 'https://example.com/portfolio',
+    role: 'Design, vývoj, nasazení',
   },
   {
-    title: "E-shop pro místní značku",
+    title: 'E-shop pro místní značku',
     description:
-      "Moderní obchodní stránka s katalogem produktů, košíkem a jednoduchou správou obsahu.",
-    url: "https://example.com/shop",
-    role: "Front-end a UX design",
+      'Moderní obchodní stránka s katalogem produktů, košíkem a jednoduchou správou obsahu.',
+    url: 'https://example.com/shop',
+    role: 'Front-end a UX design',
   },
   {
-    title: "Rezervační systém",
+    title: 'Rezervační systém',
     description:
-      "Webová aplikace pro rezervace služeb s kalendářem, upozorněními a administrací.",
-    url: "https://example.com/booking",
-    role: "Vývoj interaktivního uživatelského rozhraní",
+      'Webová aplikace pro rezervace služeb s kalendářem, upozorněními a administrací.',
+    url: 'https://example.com/booking',
+    role: 'Vývoj interaktivního uživatelského rozhraní',
   },
 ];
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-zinc-50 text-zinc-950 dark:bg-[#090909] dark:text-zinc-100">
-      <main className="mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-6 py-16 sm:px-10 lg:px-12">
+      <main className="mx-auto flex min-h-[calc(100vh-65px)] max-w-6xl flex-col justify-center px-6 py-16 sm:px-10 lg:px-12">
         <section className="mx-auto flex max-w-4xl flex-col gap-8">
           <div className="space-y-4">
             <p className="inline-flex rounded-full bg-black/5 px-4 py-1 text-sm font-semibold text-black dark:bg-zinc-800 dark:text-zinc-200">
@@ -35,9 +35,16 @@ export default function Home() {
               Vítejte na mém portfoliu.
             </h1>
             <p className="max-w-2xl text-base leading-8 text-zinc-700 dark:text-zinc-300">
-              Jmenuji se Andy a vytvářím moderní webové stránky. Tady najdete výběr projektů,
-              které jsem navrhl a zrealizoval pro klienty i vlastní značky.
+              Jmenuji se Andy a vytvářím moderní webové stránky. Tady najdete
+              výběr projektů, které jsem navrhl a zrealizoval pro klienty i
+              vlastní značky.
             </p>
+            <a
+              href="/poradna"
+              className="inline-flex items-center text-sm font-semibold text-indigo-600 transition hover:text-indigo-500 dark:text-indigo-400"
+            >
+              Potřebujete poradit s webem? Navštivte poradnu →
+            </a>
           </div>
 
           <div className="grid gap-6 sm:grid-cols-2">
