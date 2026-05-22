@@ -16,9 +16,9 @@ export default function SiteHeader() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 sm:px-10 lg:px-12">
         <Link
           href="/"
-          className="text-lg font-bold tracking-tight text-zinc-950 dark:text-zinc-100"
+          className="font-mono text-[11px] font-bold tracking-[0.2em] uppercase text-zinc-950 dark:text-zinc-100"
         >
-          Andy
+          ANDRYSEK.DEV
         </Link>
 
         <nav className="flex items-center gap-6">
