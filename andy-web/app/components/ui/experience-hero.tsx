@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import React, { useRef, useEffect, useMemo } from "react";
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { Float, MeshDistortMaterial } from "@react-three/drei";
-import * as THREE from "three";
-import gsap from "gsap";
+import React, { useRef, useEffect, useMemo } from 'react';
+import { Canvas, useFrame, useThree } from '@react-three/fiber';
+import { Float, MeshDistortMaterial } from '@react-three/drei';
+import * as THREE from 'three';
+import gsap from 'gsap';
 
 const LiquidBackground = () => {
   const meshRef = useRef<THREE.Mesh>(null);
@@ -14,15 +14,14 @@ const LiquidBackground = () => {
       uTime: { value: 0 },
       uMouse: { value: new THREE.Vector2(0, 0) },
     }),
-    []
+    [],
   );
 
   useFrame((state) => {
     const { clock, mouse } = state;
     if (meshRef.current) {
-      (
-        meshRef.current.material as THREE.ShaderMaterial
-      ).uniforms.uTime.value = clock.getElapsedTime();
+      (meshRef.current.material as THREE.ShaderMaterial).uniforms.uTime.value =
+        clock.getElapsedTime();
       (
         meshRef.current.material as THREE.ShaderMaterial
       ).uniforms.uMouse.value.lerp(mouse, 0.05);
@@ -82,24 +81,24 @@ export const HeroSection = () => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         revealRef.current,
-        { filter: "blur(30px)", opacity: 0, scale: 1.02 },
+        { filter: 'blur(30px)', opacity: 0, scale: 1.02 },
         {
-          filter: "blur(0px)",
+          filter: 'blur(0px)',
           opacity: 1,
           scale: 1,
           duration: 2.2,
-          ease: "expo.out",
-        }
+          ease: 'expo.out',
+        },
       );
 
-      gsap.from(".command-cell", {
+      gsap.from('.command-cell', {
         x: 60,
         opacity: 0,
         stagger: 0.1,
         duration: 1.5,
-        ease: "power4.out",
+        ease: 'power4.out',
         delay: 1,
-        clearProps: "all",
+        clearProps: 'all',
       });
 
       const handleMouseMove = (e: MouseEvent) => {
@@ -107,7 +106,7 @@ export const HeroSection = () => {
         const rect = ctaRef.current.getBoundingClientRect();
         const dist = Math.hypot(
           e.clientX - (rect.left + rect.width / 2),
-          e.clientY - (rect.top + rect.height / 2)
+          e.clientY - (rect.top + rect.height / 2),
         );
         if (dist < 150) {
           gsap.to(ctaRef.current, {
@@ -120,12 +119,12 @@ export const HeroSection = () => {
             x: 0,
             y: 0,
             duration: 0.8,
-            ease: "elastic.out(1, 0.3)",
+            ease: 'elastic.out(1, 0.3)',
           });
         }
       };
-      window.addEventListener("mousemove", handleMouseMove);
-      return () => window.removeEventListener("mousemove", handleMouseMove);
+      window.addEventListener('mousemove', handleMouseMove);
+      return () => window.removeEventListener('mousemove', handleMouseMove);
     }, containerRef);
     return () => ctx.revert();
   }, []);
@@ -202,14 +201,19 @@ export const HeroSection = () => {
         {/* Right side cards */}
         <div className="w-full md:w-80 lg:w-96 flex-shrink-0 flex flex-col gap-4 justify-center z-20">
           {[
-            { id: "001", title: "DOSTUPNOST", val: "Volný", type: "progress" },
+            { id: '001', title: 'DOSTUPNOST', val: 'Volný', type: 'progress' },
             {
-              id: "002",
-              title: "STACK",
-              val: "React / Next.js",
-              type: "data",
+              id: '002',
+              title: 'STACK',
+              val: 'React / Next.js',
+              type: 'data',
             },
-            { id: "003", title: "ZAMĚŘENÍ", val: "Web Developer", type: "text" },
+            {
+              id: '003',
+              title: 'ZAMĚŘENÍ',
+              val: 'Web Developer',
+              type: 'text',
+            },
           ].map((item) => (
             <div
               key={item.id}
@@ -218,7 +222,7 @@ export const HeroSection = () => {
               <span className="font-mono text-[9px] text-white/25 uppercase tracking-widest block mb-3">
                 {item.id} // {item.title}
               </span>
-              {item.type === "progress" ? (
+              {item.type === 'progress' ? (
                 <div className="flex justify-between items-end mt-2">
                   <h4 className="text-2xl sm:text-3xl font-bold text-white tracking-tighter">
                     {item.val}
@@ -227,7 +231,7 @@ export const HeroSection = () => {
                     <div className="h-full bg-indigo-500 w-[60%] animate-loading" />
                   </div>
                 </div>
-              ) : item.type === "data" ? (
+              ) : item.type === 'data' ? (
                 <div className="mt-4 flex flex-col gap-3">
                   <div className="flex justify-between text-[10px] font-mono text-white/50">
                     <span>TypeScript / Tailwind</span>
@@ -241,7 +245,7 @@ export const HeroSection = () => {
                 </div>
               ) : (
                 <h3 className="text-sm font-medium text-white/70 mt-3 leading-snug">
-                  Statické weby proměňuji v{" "}
+                  Statické weby proměňuji v{' '}
                   <span className="italic text-indigo-400">živé zážitky</span>.
                 </h3>
               )}
