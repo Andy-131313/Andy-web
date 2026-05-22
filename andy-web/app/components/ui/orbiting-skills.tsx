@@ -1,10 +1,10 @@
-"use client";
-import React, { useEffect, useState, memo } from "react";
+'use client';
+import React, { useEffect, useState, memo } from 'react';
 
 // --- Type Definitions ---
-type IconType = "html" | "css" | "javascript" | "react" | "node" | "tailwind";
+type IconType = 'html' | 'css' | 'javascript' | 'react' | 'node' | 'tailwind';
 
-type GlowColor = "cyan" | "purple";
+type GlowColor = 'cyan' | 'purple';
 
 interface SkillConfig {
   id: string;
@@ -42,7 +42,7 @@ const iconComponents: Record<
         />
       </svg>
     ),
-    color: "#E34F26",
+    color: '#E34F26',
   },
   css: {
     component: () => (
@@ -53,7 +53,7 @@ const iconComponents: Record<
         />
       </svg>
     ),
-    color: "#1572B6",
+    color: '#1572B6',
   },
   javascript: {
     component: () => (
@@ -65,7 +65,7 @@ const iconComponents: Record<
         />
       </svg>
     ),
-    color: "#F7DF1E",
+    color: '#F7DF1E',
   },
   react: {
     component: () => (
@@ -90,7 +90,7 @@ const iconComponents: Record<
         </g>
       </svg>
     ),
-    color: "#61DAFB",
+    color: '#61DAFB',
   },
   node: {
     component: () => (
@@ -101,7 +101,7 @@ const iconComponents: Record<
         />
       </svg>
     ),
-    color: "#339933",
+    color: '#339933',
   },
   tailwind: {
     component: () => (
@@ -112,7 +112,7 @@ const iconComponents: Record<
         />
       </svg>
     ),
-    color: "#06B6D4",
+    color: '#06B6D4',
   },
 };
 
@@ -121,71 +121,71 @@ const SkillIcon = memo(({ type }: { type: IconType }) => {
   const IconComponent = iconComponents[type]?.component;
   return IconComponent ? <IconComponent /> : null;
 });
-SkillIcon.displayName = "SkillIcon";
+SkillIcon.displayName = 'SkillIcon';
 
 // --- Configuration ---
 const skillsConfig: SkillConfig[] = [
   // Inner Orbit
   {
-    id: "html",
+    id: 'html',
     orbitRadius: 100,
     size: 40,
     speed: 1,
-    iconType: "html",
+    iconType: 'html',
     phaseShift: 0,
-    glowColor: "cyan",
-    label: "HTML5",
+    glowColor: 'cyan',
+    label: 'HTML5',
   },
   {
-    id: "css",
+    id: 'css',
     orbitRadius: 100,
     size: 45,
     speed: 1,
-    iconType: "css",
+    iconType: 'css',
     phaseShift: (2 * Math.PI) / 3,
-    glowColor: "cyan",
-    label: "CSS3",
+    glowColor: 'cyan',
+    label: 'CSS3',
   },
   {
-    id: "javascript",
+    id: 'javascript',
     orbitRadius: 100,
     size: 40,
     speed: 1,
-    iconType: "javascript",
+    iconType: 'javascript',
     phaseShift: (4 * Math.PI) / 3,
-    glowColor: "cyan",
-    label: "JavaScript",
+    glowColor: 'cyan',
+    label: 'JavaScript',
   },
   // Outer Orbit
   {
-    id: "react",
+    id: 'react',
     orbitRadius: 180,
     size: 50,
     speed: -0.6,
-    iconType: "react",
+    iconType: 'react',
     phaseShift: 0,
-    glowColor: "purple",
-    label: "React",
+    glowColor: 'purple',
+    label: 'React',
   },
   {
-    id: "node",
+    id: 'node',
     orbitRadius: 180,
     size: 45,
     speed: -0.6,
-    iconType: "node",
+    iconType: 'node',
     phaseShift: (2 * Math.PI) / 3,
-    glowColor: "purple",
-    label: "Node.js",
+    glowColor: 'purple',
+    label: 'Node.js',
   },
   {
-    id: "tailwind",
+    id: 'tailwind',
     orbitRadius: 180,
     size: 40,
     speed: -0.6,
-    iconType: "tailwind",
+    iconType: 'tailwind',
     phaseShift: (4 * Math.PI) / 3,
-    glowColor: "purple",
-    label: "Tailwind CSS",
+    glowColor: 'purple',
+    label: 'Tailwind CSS',
   },
 ];
 
@@ -214,7 +214,7 @@ const OrbitingSkill = memo(({ config, angle }: OrbitingSkillProps) => {
           relative w-full h-full p-2 bg-zinc-800/90 backdrop-blur-sm
           rounded-full flex items-center justify-center
           transition-all duration-300 cursor-pointer
-          ${isHovered ? "scale-125 shadow-2xl" : "shadow-lg hover:shadow-xl"}
+          ${isHovered ? 'scale-125 shadow-2xl' : 'shadow-lg hover:shadow-xl'}
         `}
         style={{
           boxShadow: isHovered
@@ -232,21 +232,25 @@ const OrbitingSkill = memo(({ config, angle }: OrbitingSkillProps) => {
     </div>
   );
 });
-OrbitingSkill.displayName = "OrbitingSkill";
+OrbitingSkill.displayName = 'OrbitingSkill';
 
 // --- Orbit Path ---
 const GlowingOrbitPath = memo(
-  ({ radius, glowColor = "cyan", animationDelay = 0 }: GlowingOrbitPathProps) => {
+  ({
+    radius,
+    glowColor = 'cyan',
+    animationDelay = 0,
+  }: GlowingOrbitPathProps) => {
     const glowColors = {
       cyan: {
-        primary: "rgba(6, 182, 212, 0.4)",
-        secondary: "rgba(6, 182, 212, 0.2)",
-        border: "rgba(6, 182, 212, 0.3)",
+        primary: 'rgba(6, 182, 212, 0.4)',
+        secondary: 'rgba(6, 182, 212, 0.2)',
+        border: 'rgba(6, 182, 212, 0.3)',
       },
       purple: {
-        primary: "rgba(99, 102, 241, 0.4)",
-        secondary: "rgba(99, 102, 241, 0.2)",
-        border: "rgba(99, 102, 241, 0.3)",
+        primary: 'rgba(99, 102, 241, 0.4)',
+        secondary: 'rgba(99, 102, 241, 0.2)',
+        border: 'rgba(99, 102, 241, 0.3)',
       },
     };
 
@@ -266,7 +270,7 @@ const GlowingOrbitPath = memo(
           style={{
             background: `radial-gradient(circle, transparent 30%, ${colors.secondary} 70%, ${colors.primary} 100%)`,
             boxShadow: `0 0 60px ${colors.primary}, inset 0 0 60px ${colors.secondary}`,
-            animation: "pulse 4s ease-in-out infinite",
+            animation: 'pulse 4s ease-in-out infinite',
             animationDelay: `${animationDelay}s`,
           }}
         />
@@ -279,17 +283,22 @@ const GlowingOrbitPath = memo(
         />
       </div>
     );
-  }
+  },
 );
-GlowingOrbitPath.displayName = "GlowingOrbitPath";
+GlowingOrbitPath.displayName = 'GlowingOrbitPath';
 
 // --- Main Component ---
 export default function OrbitingSkills() {
   const [time, setTime] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    if (isPaused) return;
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (isPaused || !mounted) return;
 
     let animationFrameId: number;
     let lastTime = performance.now();
@@ -303,15 +312,15 @@ export default function OrbitingSkills() {
 
     animationFrameId = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(animationFrameId);
-  }, [isPaused]);
+  }, [isPaused, mounted]);
 
   const orbitConfigs: Array<{
     radius: number;
     glowColor: GlowColor;
     delay: number;
   }> = [
-    { radius: 100, glowColor: "cyan", delay: 0 },
-    { radius: 180, glowColor: "purple", delay: 1.5 },
+    { radius: 100, glowColor: 'cyan', delay: 0 },
+    { radius: 180, glowColor: 'purple', delay: 1.5 },
   ];
 
   return (
@@ -337,7 +346,7 @@ export default function OrbitingSkills() {
           <div className="absolute inset-0 rounded-full bg-indigo-500/30 blur-xl animate-pulse" />
           <div
             className="absolute inset-0 rounded-full bg-indigo-400/20 blur-2xl animate-pulse"
-            style={{ animationDelay: "1s" }}
+            style={{ animationDelay: '1s' }}
           />
           <div className="relative z-10">
             <svg
@@ -380,12 +389,13 @@ export default function OrbitingSkills() {
         ))}
 
         {/* Orbiting icons */}
-        {skillsConfig.map((config) => {
-          const angle = time * config.speed + (config.phaseShift || 0);
-          return (
-            <OrbitingSkill key={config.id} config={config} angle={angle} />
-          );
-        })}
+        {mounted &&
+          skillsConfig.map((config) => {
+            const angle = time * config.speed + (config.phaseShift || 0);
+            return (
+              <OrbitingSkill key={config.id} config={config} angle={angle} />
+            );
+          })}
       </div>
     </section>
   );

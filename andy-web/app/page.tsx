@@ -11,7 +11,8 @@ const projects = [
     role: 'Design, vývoj, nasazení',
     span: 'col-span-1 md:col-span-2 md:row-span-2',
     featured: true,
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
+    image:
+      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
   },
   {
     title: 'E-shop pro místní značku',
@@ -21,7 +22,8 @@ const projects = [
     role: 'Front-end a UX design',
     span: 'col-span-1',
     featured: false,
-    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80',
+    image:
+      'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80',
   },
   {
     title: 'Rezervační systém',
@@ -31,7 +33,8 @@ const projects = [
     role: 'Vývoj interaktivního uživatelského rozhraní',
     span: 'col-span-1',
     featured: false,
-    image: 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&q=80',
+    image:
+      'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&q=80',
   },
 ];
 
@@ -81,7 +84,11 @@ export default function Home() {
                       alt={project.title}
                       fill
                       className="object-cover opacity-20 dark:opacity-10 group-hover:opacity-30 dark:group-hover:opacity-20 transition-opacity duration-500 scale-105 group-hover:scale-100"
-                      sizes={project.featured ? '(max-width: 768px) 100vw, 66vw' : '(max-width: 768px) 100vw, 33vw'}
+                      sizes={
+                        project.featured
+                          ? '(max-width: 768px) 100vw, 66vw'
+                          : '(max-width: 768px) 100vw, 33vw'
+                      }
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-white/40 dark:from-zinc-950 dark:via-zinc-950/80 dark:to-zinc-950/40" />
                   </div>
@@ -93,7 +100,9 @@ export default function Home() {
                     <div>
                       <div className="flex items-center justify-between gap-4">
                         <div>
-                          <h2 className={`font-semibold text-zinc-950 dark:text-white ${project.featured ? 'text-2xl' : 'text-lg'}`}>
+                          <h2
+                            className={`font-semibold text-zinc-950 dark:text-white ${project.featured ? 'text-2xl' : 'text-lg'}`}
+                          >
                             {project.title}
                           </h2>
                           <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
@@ -104,7 +113,9 @@ export default function Home() {
                           Web
                         </span>
                       </div>
-                      <p className={`mt-4 leading-7 text-zinc-600 dark:text-zinc-300 ${project.featured ? 'text-base' : 'text-sm'}`}>
+                      <p
+                        className={`mt-4 leading-7 text-zinc-600 dark:text-zinc-300 ${project.featured ? 'text-base' : 'text-sm'}`}
+                      >
                         {project.description}
                       </p>
                     </div>
@@ -115,7 +126,17 @@ export default function Home() {
                       className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-indigo-600 transition group-hover:gap-2 hover:text-indigo-500 dark:text-indigo-400"
                     >
                       Zobrazit projekt
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-0.5">
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="transition-transform group-hover:translate-x-0.5"
+                      >
                         <path d="M7 17L17 7M17 7H8M17 7V16" />
                       </svg>
                     </a>
