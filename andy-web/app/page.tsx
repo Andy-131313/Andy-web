@@ -1,3 +1,5 @@
+import { HeroSection } from "./components/ui/experience-hero";
+
 const projects = [
   {
     title: 'Osobní portfolio',
@@ -24,9 +26,12 @@ const projects = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-zinc-50 text-zinc-950 dark:bg-[#090909] dark:text-zinc-100">
-      <main className="mx-auto flex min-h-[calc(100vh-65px)] max-w-6xl flex-col justify-center px-6 py-16 sm:px-10 lg:px-12">
-        <section className="mx-auto flex max-w-4xl flex-col gap-8">
+    <>
+      <HeroSection />
+
+      <div id="projekty" className="bg-zinc-50 dark:bg-[#090909] text-zinc-950 dark:text-zinc-100">
+        <main className="mx-auto flex max-w-6xl flex-col px-6 py-16 sm:px-10 lg:px-12">
+          <section className="mx-auto flex max-w-4xl flex-col gap-8 w-full">
           <div className="space-y-4">
             <p className="inline-flex rounded-full bg-black/5 px-4 py-1 text-sm font-semibold text-black dark:bg-zinc-800 dark:text-zinc-200">
               Webové portfolio
@@ -83,5 +88,6 @@ export default function Home() {
         </section>
       </main>
     </div>
+    </>
   );
 }
