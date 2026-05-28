@@ -48,7 +48,7 @@ export default function SiteHeader() {
         </nav>
 
         <a
-          href="https://helpdesk.andy-it.cz"
+          href="https://www.andy-it.cz/helpdesk"
           target="_blank"
           rel="noopener noreferrer"
           className="ml-4 inline-flex items-center rounded-xl bg-indigo-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-indigo-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-[#090909]"
